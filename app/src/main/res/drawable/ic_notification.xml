@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  通知栏小图标。
+
+  规格要求（和启动图标完全不同）：
+    - 只能有 alpha 通道有意义，系统会整张图按状态栏颜色染色；
+    - 所以这里全部用白色填充，形状要够实、够简单，
+      缩到 24dp 以下还能认出来。
+  云 + 太阳的简化剪影，和启动图标同一套视觉。
+-->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="24dp"
+    android:height="24dp"
+    android:viewportWidth="24"
+    android:viewportHeight="24">
+    <!-- 太阳 -->
+    <path
+        android:fillColor="#FFFFFFFF"
+        android:pathData="M16.5,5.5m-3.2,0a3.2,3.2 0,1 1,6.4 0a3.2,3.2 0,1 1,-6.4 0" />
+    <!-- 云：两个圆加一条底边，缩小时轮廓仍然清楚 -->
+    <path
+        android:fillColor="#FFFFFFFF"
+        android:pathData="M7.2,13.4m-4.0,0a4.0,4.0 0,1 1,8.0 0a4.0,4.0 0,1 1,-8.0 0" />
+    <path
+        android:fillColor="#FFFFFFFF"
+        android:pathData="M13.0,13.6m-3.4,0a3.4,3.4 0,1 1,6.8 0a3.4,3.4 0,1 1,-6.8 0" />
+    <path
+        android:fillColor="#FFFFFFFF"
+        android:pathData="M3.2,14.6h17.2a3.4,3.4 0,0 1,0 6.8h-17.2a3.4,3.4 0,0 1,0 -6.8z" />
+</vector>

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">iWeather</string>
+    <string name="widget_small_label">天气 2×2</string>
+    <string name="widget_medium_label">天气 3×2</string>
+    <string name="widget_large_label">天气 4×2</string>
+</resources>

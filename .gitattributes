@@ -1,0 +1,31 @@
+# 统一换行符：仓库内一律 LF，检出到 Windows 时自动转 CRLF。
+# 不加这个文件，Windows 上提交的代码在 Linux/macOS 克隆后会整个显示为"已修改"。
+* text=auto eol=lf
+
+# 这些必须是字节精确的二进制，禁止任何换行符转换。
+# 加错会让 gradlew 在 Linux/macOS 上直接无法执行。
+*.png  binary
+*.jpg  binary
+*.jpeg binary
+*.webp binary
+*.ico  binary
+*.ttf  binary
+*.otf  binary
+*.ttc  binary
+*.pag  binary
+*.jar  binary
+*.apk  binary
+*.aab  binary
+*.keystore binary
+*.jks  binary
+
+# gradlew 是给 Linux/macOS 用的 shell 脚本，必须保持 LF，
+# 否则会报 "/bin/sh^M: bad interpreter"。
+gradlew        text eol=lf
+*.sh           text eol=lf
+
+# Windows 批处理必须 CRLF
+*.bat          text eol=crlf
+
+# 让 GitHub 语言统计不要把生成物算进去
+*.json         linguist-language=JSON

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  云备份与设备间迁移的排除规则。
+
+  城市列表与设置（iweather_prefs）**保留**，这样换机时能直接恢复。
+
+  "凭证"类的 prefs 一律排除：
+    iweather_credentials  彩云 Token / AppKey / Secret
+    iweather_amap         高德 Key
+  即使当前版本没有界面能写入它们（凭证是编译期注入 BuildConfig 的），
+  也先把规则立好 —— 将来一旦加了"用户自己填 Key"的功能，
+  不会因为忘记加规则而把密钥同步到云端。
+-->
+<data-extraction-rules>
+    <cloud-backup>
+        <exclude domain="sharedpref" path="iweather_credentials.xml" />
+        <exclude domain="sharedpref" path="iweather_amap.xml" />
+    </cloud-backup>
+    <device-transfer>
+        <exclude domain="sharedpref" path="iweather_credentials.xml" />
+        <exclude domain="sharedpref" path="iweather_amap.xml" />
+    </device-transfer>
+</data-extraction-rules>
